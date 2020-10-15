@@ -592,7 +592,7 @@ defaults write "$audit_plist" lastComplianceCheck "$(date)"
                     stig_ref = rule_yaml['id']
                 else:
                     if rule_yaml['references']['disa_stig'][0] == "N/A":
-                        stig_ref = rule_yaml['id']
+                        stig_ref = [rule_yaml['id']]
                     else:
                         stig_ref = rule_yaml['references']['disa_stig']
                     
@@ -647,10 +647,10 @@ result_value=$({2})
 # expected result {3}
 
 if [[ $result_value == "{4}" ]]; then
-    echo "$(date -u) {0} {5} passed... (Result: $({2}), Expected Result: "{3}")" | tee -a "$audit_log"
+    echo "$(date -u) {5} passed... (Result: $result_value, Expected Result: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool NO
 else
-    echo "$(date -u) {0} {5} FAILED... (Result: $({2}), Expected Result: "{3}")" | tee -a "$audit_log"
+    echo "$(date -u) {5} FAILED... (Result: $result_value, Expected Result: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool YES
 fi
     """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value, ','.join(log_reference_id))
