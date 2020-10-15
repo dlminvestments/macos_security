@@ -639,15 +639,15 @@ defaults write "$audit_plist" lastComplianceCheck "$(date)"
                 zsh_check_text = """
 #####----- Rule: {0} -----#####
 ## Addresses the following NIST 800-53 controls: {1}
-echo 'Running the command to check the settings for: {0} ...' | tee -a "$audit_log"
+#echo 'Running the command to check the settings for: {0} ...' | tee -a "$audit_log"
 result_value=$({2})
 # expected result {3}
 
 if [[ $result_value == "{4}" ]]; then
-    echo "{5} passed... (Result: $result_value)" | tee -a "$audit_log"
+    echo "$(date -u) {0} {5} passed... (Result: $({2}), Expected Result: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool NO
 else
-    echo "{0} FAILED... (Result: $({2}), Expected Result: "{3}") " | tee -a "$audit_log"
+    echo "$(date -u) {0} {5} FAILED... (Result: $({2}), Expected Result: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool YES
 fi
     """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value, ','.join(log_reference_id))
