@@ -624,10 +624,10 @@ result_value=$({2})
 # expected result {3}
 
 if [[ $result_value == "{4}" ]]; then
-    echo "{0} passed..." | tee -a "$audit_log"
+    echo "{0} passed... (Result: $({2}))" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool NO
 else
-    echo "{0} FAILED..." | tee -a "$audit_log"
+    echo "{0} FAILED... (Result: $({2}), Expected Result: "{3}") " | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool YES
 fi
     """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value)
