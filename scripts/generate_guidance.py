@@ -589,9 +589,12 @@ defaults write "$audit_plist" lastComplianceCheck "$(date)"
                 try:
                     rule_yaml['references']['disa_stig']
                 except KeyError:
-                    stig_ref = ''
+                    stig_ref = rule_yaml['id']
                 else:
-                    stig_ref = rule_yaml['references']['disa_stig']
+                    if rule_yaml['references']['disa_stig'][0] == "N/A":
+                        stig_ref = rule_yaml['id']
+                    else:
+                        stig_ref = rule_yaml['references']['disa_stig']
                     
                 try:
                     rule_yaml['references']['ASCS']
