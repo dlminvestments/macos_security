@@ -585,6 +585,26 @@ defaults write "$audit_plist" lastComplianceCheck "$(date)"
                     nist_80053r4 = 'N/A'
                 else:
                     nist_80053r4 = rule_yaml['references']['800-53r4']
+                
+                try:
+                    rule_yaml['references']['disa_stig']
+                except KeyError:
+                    stig_ref = ''
+                else:
+                    stig_ref = rule_yaml['references']['disa_stig']
+                    
+                try:
+                    rule_yaml['references']['ASCS']
+                except KeyError:
+                    ascs_ref = ''
+                else:
+                    ascs_ref = rule_yaml['references']['ASCS']
+            
+                if "STIG" in baseline_yaml['title']:
+                    logging.debug(f'Setting STIG reference for logging: {stig_ref}')
+                    log_reference_id = stig_ref
+                else:
+                    log_reference_id= rule_yaml['id']
 
             # group the controls
                 nist_80053r4.sort()
@@ -624,13 +644,13 @@ result_value=$({2})
 # expected result {3}
 
 if [[ $result_value == "{4}" ]]; then
-    echo "{0} passed... (Result: $({2}))" | tee -a "$audit_log"
+    echo "{5} passed... (Result: $result_value)" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool NO
 else
     echo "{0} FAILED... (Result: $({2}), Expected Result: "{3}") " | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool YES
 fi
-    """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value)
+    """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value, ','.join(log_reference_id))
 
                 check_function_string = check_function_string + zsh_check_text
 
