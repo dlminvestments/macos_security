@@ -647,10 +647,10 @@ result_value=$({2})
 # expected result {3}
 
 if [[ $result_value == "{4}" ]]; then
-    echo "$(date -u) {5} passed... (Result: $result_value, Expected Result: "{3}")" | tee -a "$audit_log"
+    echo "$(date -u) {5} passed (Result: $result_value, Expected: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool NO
 else
-    echo "$(date -u) {5} FAILED... (Result: $result_value, Expected Result: "{3}")" | tee -a "$audit_log"
+    echo "$(date -u) {5} failed (Result: $result_value, Expected: "{3}")" | tee -a "$audit_log"
     defaults write "$audit_plist" {0} -bool YES
 fi
     """.format(rule_yaml['id'], nist_controls.replace("\n", "\n#"), check.strip(), result, result_value, ','.join(log_reference_id))
