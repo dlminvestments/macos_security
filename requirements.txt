@@ -1,3 +1,3 @@
 pyyaml
-lxml
+lxml==4.6.1
 xlwt
