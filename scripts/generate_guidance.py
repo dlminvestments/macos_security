@@ -336,8 +336,6 @@ def generate_profiles(baseline_name, build_path, parent_dir, baseline_yaml):
                                 pass
                         except (KeyError, ValueError) as e:
                             profile_errors.append(rule)
-                            #print(e)
-                            pass
 
                         try:
                             if isinstance(info, list):
@@ -347,8 +345,6 @@ def generate_profiles(baseline_name, build_path, parent_dir, baseline_yaml):
                                 pass
                         except (KeyError, ValueError) as e:
                             profile_errors.append(rule)
-                            #print(e)
-                            pass
 
                         if payload_type == "com.apple.ManagedClient.preferences":
                             for payload_domain, settings in info.items():
