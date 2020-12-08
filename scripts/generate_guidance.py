@@ -123,19 +123,19 @@ def format_mobileconfig_fix(mobileconfig):
             for item in settings.items():
                 rulefix = rulefix + (f"<key>{item[0]}</key>\n")
 
-                if type(item[1]) == bool:
+                if type(item[1]) is bool:
                     rulefix = rulefix + \
                         (f"<{str(item[1]).lower()}/>\n")
-                elif type(item[1]) == list:
+                elif type(item[1]) is list:
                     rulefix = rulefix + "<array>\n"
                     for setting in item[1]:
                         rulefix = rulefix + \
                             (f"    <string>{setting}</string>\n")
                     rulefix = rulefix + "</array>\n"
-                elif type(item[1]) == int:
+                elif type(item[1]) is int:
                     rulefix = rulefix + \
                         (f"<integer>{item[1]}</integer>\n")
-                elif type(item[1]) == str:
+                elif type(item[1]) is str:
                     rulefix = rulefix + \
                         (f"<string>{item[1]}</string>\n")
 
