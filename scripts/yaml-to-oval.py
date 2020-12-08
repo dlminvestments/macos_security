@@ -197,11 +197,11 @@ def main():
                                 
                                 for key, value in settings.items():
                                     state_kind = ""
-                                    if type(value) == bool:
+                                    if type(value) is bool:
                                         state_kind = "boolean"
-                                    elif type(value) == int:
+                                    elif type(value) is int:
                                         state_kind = "int"
-                                    elif type(value) == str:
+                                    elif type(value) is str:
                                         state_kind = "string"
 
                                     oval_definition = oval_definition + '''
@@ -443,11 +443,11 @@ def main():
 
 
                             state_kind = ""
-                            if type(value) == bool:
+                            if type(value) is bool:
                                 state_kind = "boolean"
-                            elif type(value) == int:
+                            elif type(value) is int:
                                 state_kind = "int"
-                            elif type(value) == str:
+                            elif type(value) is str:
                                 state_kind = "string"
                             else:
                                 
