@@ -14,23 +14,3 @@ ifdef::env-github[]
 endif::[]
 :uri-org: https://github.com/usnistgov
 :uri-repo: {uri-org}/macos_security
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=INFRASTRUCTURE+SECURITY)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/cis_kubernetes)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=CIS+KUBERNETES+V1.5)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=CIS+AWS+V1.2)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/cis_azure)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=CIS+AZURE+V1.1)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/pci)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=PCI-DSS+V3.2)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/nist)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=NIST-800-53)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/iso)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=ISO27001)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/soc2)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=SOC2)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/cis_gcp)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=CIS+GCP+V1.1)
-
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/hipaa)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=HIPAA)
