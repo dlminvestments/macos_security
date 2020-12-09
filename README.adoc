@@ -60,3 +60,7 @@ Refer to the link:CHANGELOG.adoc[CHANGELOG] for a complete list of changes.
 == NIST Disclaimer
 
 Any identification of commercial or open-source software in this document is done so purely in order to specify the methodology adequately. Such identification is not intended to imply recommendation or endorsement by the National Institute of Standards and Technology, nor is it intended to imply that the software identified are necessarily the best available for the purpose.
+
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=INFRASTRUCTURE+SECURITY)
+
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/dlminvestments/macos_security/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=dlminvestments%2Fmacos_security&benchmark=INFRASTRUCTURE+SECURITY)
